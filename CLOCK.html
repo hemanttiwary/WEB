@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>12</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+
+<div class="container">
+	<div class="clock">
+		<div id="hour" style="--clr:red; " class="hand" > <i></i> </div>
+		<div  id="min" style="--clr:green;" class="hand"> <i></i> </div>
+		<div id="sec" style="--clr:blue; " class="hand" > <i></i> </div>
+			
+			<span style="--i:1;"> <b>1</b> </span>
+			<span style="--i:2;"> <b>2</b> </span>
+			<span style="--i:3;"> <b>3</b> </span>
+			<span style="--i:4;"> <b>4</b> </span>
+			<span style="--i:5;"> <b>5</b> </span>
+			<span style="--i:6;"> <b>6</b> </span>
+			<span style="--i:7;"> <b>7</b> </span>
+			<span style="--i:8;"> <b>8</b> </span>
+			<span style="--i:9;"> <b>9</b> </span>
+			<span style="--i:10;"> <b>10</b> </span>
+			<span style="--i:11;"> <b>11</b> </span>
+			<span style="--i:12;"> <b>12</b> </span>
+	</div>
+</div>
+
+<style>
+
+
+</style>
+
+
+</body>
+<script type="text/javascript">
+
+	let hr = document.getElementById('hour');
+	let mint = document.getElementById('min');
+	let secon = document.getElementById('sec');
+	
+	function displayTime(){
+		let date = new Date();
+	
+		let hh = date.getHours();
+		let mm = date.getMinutes();
+		let ss = date.getSeconds();
+	
+		let hrr = 30*hh + mm/2;
+		let minrot = 6*mm;
+		let secrot = 6*ss;  
+	
+		hr.style.transform = `rotate(${hrr}deg)`;
+		mint.style.transform = `rotate(${minrot}deg)`;
+		secon.style.transform = `rotate(${secrot}deg)`;
+		
+	}
+	
+	setInterval(displayTime, 1000);
+	
+	</script>
+</html>
